@@ -1,0 +1,63 @@
+
+================================================================================
+            SUSPICIOUS ACTIVITY REPORT (SAR) — CONFIDENTIAL
+                      FraudScope | Transaction Risk Intelligence Platform
+================================================================================
+
+REPORT DATE       : 2026-03-13
+REPORT REFERENCE  : SAR-TXN009420
+PREPARED BY       : FraudScope Detection Engine
+
+--------------------------------------------------------------------------------
+SECTION 1 — SUBJECT DETAILS
+--------------------------------------------------------------------------------
+Entity Name       : Moreno, Dean and Taylor
+Counterparty      : Dillon-Black
+Country           : Sudan
+Transaction Type  : CASH
+
+--------------------------------------------------------------------------------
+SECTION 2 — SUSPICIOUS TRANSACTION DETAILS
+--------------------------------------------------------------------------------
+Transaction ID    : TXN009420
+Date              : 2025-03-21
+Amount            : EUR 50,000.00
+Risk Score        : 55 / 100
+Risk Level        : Medium
+
+--------------------------------------------------------------------------------
+SECTION 3 — RED FLAGS IDENTIFIED
+--------------------------------------------------------------------------------
+Structuring Flag  : NO
+Round Trip Flag   : YES
+High Risk Country : YES
+Velocity Flag     : NO
+Large Cash Flag   : YES
+Fraud Pattern     : ROUND_TRIP
+
+--------------------------------------------------------------------------------
+SECTION 4 — NARRATIVE
+--------------------------------------------------------------------------------
+The transaction identified above has been flagged by the FraudScope
+detection engine based on multiple red flag indicators. The entity
+"Moreno, Dean and Taylor" conducted a cash transaction of
+EUR 50,000.00 with "Dillon-Black"
+on 2025-03-21.
+
+This activity is consistent with the "round_trip" typology,
+which is commonly associated with financial crime and money laundering.
+The transaction has been assigned a risk score of 55/100
+and classified as Medium risk.
+
+--------------------------------------------------------------------------------
+SECTION 5 — RECOMMENDED ACTION
+--------------------------------------------------------------------------------
+1. Escalate to Senior Compliance Officer for review
+2. Place entity on enhanced due diligence (EDD) watchlist
+3. File report with Financial Intelligence Unit (FIU)
+4. Freeze account pending investigation if risk score exceeds 50
+5. Cross-reference entity against OFAC / UN sanctions list
+
+================================================================================
+                         END OF SUSPICIOUS ACTIVITY REPORT
+================================================================================
