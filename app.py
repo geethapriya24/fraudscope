@@ -28,6 +28,7 @@ def load_data():
     df = pd.read_csv("data/aml_dashboard.csv")
     df = df.fillna("")
     df["amount"] = pd.to_numeric(df["amount"], errors="coerce").fillna(0)
+df["is_laundering"] = df["is_laundering"].astype(str).str.strip().isin(["1", "1.0", "True", "true"])
     return df
 
 with st.spinner("Loading AML data..."):
@@ -158,7 +159,7 @@ st.dataframe(
         ),
         "is_laundering": st.column_config.CheckboxColumn(
             "Confirmed AML"
-        )
+        ),
     }
 )
 
