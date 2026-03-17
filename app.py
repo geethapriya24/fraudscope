@@ -28,7 +28,7 @@ def load_data():
     df = pd.read_csv("data/aml_dashboard.csv")
     df = df.fillna("")
     df["amount"] = pd.to_numeric(df["amount"], errors="coerce").fillna(0)
-df["is_laundering"] = df["is_laundering"].astype(str).str.strip().isin(["1", "1.0", "True", "true"])
+    df["is_laundering"] = df["is_laundering"].astype(str).str.strip().isin(["1", "1.0", "True", "true"])
     return df
 
 with st.spinner("Loading AML data..."):
@@ -77,7 +77,7 @@ col1, col2, col3, col4 = st.columns(4)
 col1.metric("Total Transactions", f"{len(filtered):,}")
 col2.metric("Flagged Cases", f"{len(filtered[filtered['risk_level'] != 'Clean']):,}")
 col3.metric("High Risk", f"{len(filtered[filtered['risk_level'] == 'High']):,}")
-col4.metric("Confirmed AML", f"{len(filtered[filtered['is_laundering'] == 1]):,}")
+col4.metric("Confirmed AML", f"{len(filtered[filtered['is_laundering'] == True]):,}")
 
 st.divider()
 
@@ -159,7 +159,7 @@ st.dataframe(
         ),
         "is_laundering": st.column_config.CheckboxColumn(
             "Confirmed AML"
-        ),
+        )
     }
 )
 
@@ -185,7 +185,7 @@ if high_risk:
             st.write(f"Risk Score: {row['risk_score']} / 100")
             st.write(f"Risk Level: {row['risk_level']}")
             st.write(f"Fraud Pattern: {row['fraud_pattern']}")
-            st.write(f"Confirmed AML: {'Yes 🚨' if str(row['is_laundering']) == '1' else 'No'}")
+            st.write(f"Confirmed AML: {'Yes 🚨' if row['is_laundering'] else 'No'}")
 
         if st.button("Generate SAR Report"):
             sar = f"""
@@ -200,7 +200,7 @@ Type            : {row['transaction_type']}
 Risk Score      : {row['risk_score']} / 100
 Risk Level      : {row['risk_level']}
 Fraud Pattern   : {row['fraud_pattern']}
-Confirmed AML   : {'Yes' if str(row['is_laundering']) == '1' else 'No'}
+Confirmed AML   : {'Yes' if row['is_laundering'] else 'No'}
 
 RECOMMENDED ACTION:
 1. Escalate to Senior Compliance Officer
