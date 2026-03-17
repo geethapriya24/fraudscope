@@ -8,7 +8,7 @@
 
 \##  Live Demo
 
-&#x20;\[Open FraudScope](https://fraudscope.streamlit.app)
+&#x20;\[Open FraudScope](https://fraudscope-gznwnyzjcgu6ame7wjruvz.streamlit.app/)
 
 
 
